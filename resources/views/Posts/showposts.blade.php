@@ -14,13 +14,12 @@
                 <div class="card-body">
                     {{ $val->content }}<br>
                 </div>
-                <!-- <span class="text-left ml-2">Comment: </span> -->
-                <span class="text-right mr-2"><a href="/show/{{ $val->id }}" >Show</a>
+                <span class="text-right mr-2"><a class="btn btn-sm btn-outline-secondary mb-1" href="/show/{{ $val->id }}" >Show</a>
 
                 @if(Auth::check())
                     @if ($val->author ==  Auth::user()->name )
-                        <a href="/edit/{{ $val->id }}">Edit</a>
-                        <a href="/remove/{{ $val->id }}">Delete</a></span>
+                        <a class="btn btn-sm btn-outline-secondary mb-1" href="/edit/{{ $val->id }}">Edit</a>
+                        <a class="btn btn-sm btn-outline-secondary mb-1" href="/remove/{{ $val->id }}">Delete</a></span>
                     @endif
                 @endif
             </div>

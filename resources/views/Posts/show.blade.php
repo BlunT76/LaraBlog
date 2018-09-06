@@ -8,11 +8,11 @@
         <div class="card-body">
             {{ $post->content }}
         </div>
-        <span class="text-right mr-2"><a href="/posts">Back</a>
+        <span class="text-right mr-2"><a class="btn btn-sm btn-outline-secondary m-1" href="/posts">Back</a>
             @if(Auth::check())
                 @if ($post->author == Auth::user()->name )
-                    <a href="/edit/{{ $post['id'] }}">Edit</a>
-                    <a href="/remove/{{ $post['id'] }}">Delete</a>
+                    <a class="btn btn-sm btn-outline-secondary m-1" href="/edit/{{ $post['id'] }}">Edit</a>
+                    <a class="btn btn-sm btn-outline-secondary m-1" href="/remove/{{ $post['id'] }}">Delete</a>
                 @endif
             @endif
         </span>
@@ -27,7 +27,7 @@
         <label for="content">Add comment</label>
         <textarea class="form-control" name="content" type="textarea" rows="3"></textarea>
         </div>
-        <button class="btn btn-secondary mt-1" name="id" value="{{ $post->id }}" type="submit">Ok</button>
+        <button class="btn btn-sm btn-outline-secondary mt-1" name="id" value="{{ $post->id }}" type="submit">Ok</button>
 
     </form>
     </div>

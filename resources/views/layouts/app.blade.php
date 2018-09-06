@@ -50,7 +50,7 @@
                         @else
                             @if(Auth::check())
                             <li class="nav-item">
-                                <a class="nav-link" href="/create">New posts</a>
+                                <a class="nav-link" href="/create">New post</a>
                             </li>
                             @endif
                             <li class="nav-item dropdown">
