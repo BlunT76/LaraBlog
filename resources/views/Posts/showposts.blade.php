@@ -4,7 +4,7 @@
 <div class="container">
 
             @foreach($posts as $val)
-            <div class="card mb-3 shadow-sm">
+            <div class="card mb-5 shadow-sm">
                 <div class="card-header">
                     <span>
                     <h5>{{ $val->title }}</h5> by {{ $val->author }}

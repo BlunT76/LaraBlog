@@ -98,7 +98,7 @@ public function createposts(){
      */
 
     public function addcomment(Request $request){
-
+        
         $user = $request->user()->name;
         $id = $request->id;
         $comment = new Comment;

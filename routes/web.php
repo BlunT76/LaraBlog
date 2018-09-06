@@ -11,6 +11,7 @@
 |
 */
 
+// Guest routes
 Route::get('/', 'PostController@showposts');
 
 Auth::routes();
@@ -19,13 +20,28 @@ Route::get('/home', 'PostController@showposts');
 
 Route::get('/posts', 'PostController@showposts');
 
-Route::get('/create', 'PostController@createposts');
-Route::post('/create', 'PostController@storeposts');
-
-Route::get('/edit/{id}', 'PostController@editposts');
-
-Route::get('/remove/{id}', 'PostController@removeposts');
-
 Route::get('/show/{id}', 'PostController@show');
-Route::post('/addcomment', 'PostController@addcomment');
-//Route::get('/show/create', 'PostController@createposts');
+
+//Logged users routes
+Route::post('/create', 'PostController@storeposts', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');
+
+Route::get('/edit/{id}', 'PostController@editposts', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');
+
+Route::get('/remove/{id}', 'PostController@removeposts', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');
+
+Route::post('/addcomment', 'PostController@addcomment', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');
+
+Route::get('create','PostController@createposts', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');
+
+//Fallback routes
+Route::any('{all}', array('uses' => 'PostController@showposts'))->where('all', '.*');

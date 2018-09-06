@@ -15,7 +15,7 @@
             <textarea class="form-control" name="content" type="textarea" rows="10"></textarea>
         </div>
         <div class="form-group mb-1">
-            <button class="btn btn-secondary mt-1" type="submit">Ok</button>
+            <button class="btn btn-sm btn-outline-secondary mt-1" type="submit">Ok</button>
         </div>
     </form>
     </div>
